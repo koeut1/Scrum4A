@@ -4,17 +4,17 @@ import '../styles/Cart.css'
 function Cart({ cart, updateCart }) {
 	const [isOpen, setIsOpen] = useState(true)
 	const total = cart.reduce(
-		(acc, plantType) => acc + plantType.amount * plantType.price,
+		(acc, paintType) => acc + paintType.amount * paintType.price,
 		0
 	)
 	useEffect(() => {
-		document.title = `LMJ: ${total}€ d'achats`
+		document.title = `LMP: ${total}€ d'achats`
 	}, [total])
 
 	return isOpen ? (
-		<div className='lmj-cart'>
+		<div className='lmp-cart'>
 			<button
-				className='lmj-cart-toggle-button'
+				className='lmp-cart-toggle-button'
 				onClick={() => setIsOpen(false)}
 			>
 				Fermer
@@ -37,9 +37,9 @@ function Cart({ cart, updateCart }) {
 			)}
 		</div>
 	) : (
-		<div className='lmj-cart-closed'>
+		<div className='lmp-cart-closed'>
 			<button
-				className='lmj-cart-toggle-button'
+				className='lmp-cart-toggle-button'
 				onClick={() => setIsOpen(true)}
 			>
 				Ouvrir le Panier

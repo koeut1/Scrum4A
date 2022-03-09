@@ -1,15 +1,18 @@
 import React from "react";
-function NavBar({handleLoginClick}){
-    const handleClick =() => {
-        handleLoginClick()
-        handleSignUpClick()
-    }
+function NavBar({setIsShowSignUp, setIsShowLogin}){
+    const handleSignUpClick=()=>{
+		setIsShowSignUp((isShowSignUp)=> !isShowSignUp)
+	}
+
+    const handleLoginClick =()=>{
+		setIsShowLogin((isShowLogin)=> !isShowLogin)
+	}
 
     return (
         <div className="navbar">
             <div>
-                <span onClick={handleClick} className="loginicon">Connexion</span>
-                <span onClick={handleClick} className="SignUpicon">Inscription</span>
+                <span onClick={handleLoginClick} className="loginicon">Connexion</span>
+                <span onClick={handleSignUpClick} className="SignUpicon">Inscription</span>
             </div>
         </div>
     );

@@ -15,25 +15,21 @@ function App() {
 	useEffect(() => {
 		localStorage.setItem('cart', JSON.stringify(cart))
 	}, [cart])
-	const handleLoginClick =()=>{
-		setIsShowLogin((isShowLogin)=> !isShowLogin)
-	}
-	const handleSignUpClick=()=>{
-		setIsShowSignUp((isShowSignUp)=> !isShowSignUp)
-	}
+	
+	
 	const [isShowLogin, setIsShowLogin]=useState(false)
 	const [isShowSignUp, setIsShowSignUp]=useState(false)
 
 	return (
 		<div>
 			<Banner>
-				<img src={logo} alt='logo-la-maison-jungle' className='lmj-logo' />
-				<h1 className='lmj-title'>La maison peinture</h1>
-				<NavBar handleLoginClick={handleLoginClick}/>
+				<img src={logo} alt='logo-la-maison-peinture' className='lmp-logo' />
+				<h1 className='lmp-title'>La maison peinture</h1>
+				<NavBar setIsShowSignUp={setIsShowSignUp} setIsShowLogin={setIsShowLogin}/>
 				<LoginForm isShowLogin={isShowLogin}/>
 				<InscriptionForm isShowSignUp={isShowSignUp}/>
 			</Banner>
-			<div className='lmj-layout-inner'>
+			<div className='lmp-layout-inner'>
 				<Cart cart={cart} updateCart={updateCart} />
 				<ShoppingList cart={cart} updateCart={updateCart} />
 			</div>

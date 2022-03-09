@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { paintList } from '../datas/paintList'
-import PlantItem from './PlantItem'
+import PaintItem from './PaintItem'
 import Categories from './Categories'
 import '../styles/ShoppingList.css'
 
@@ -13,14 +13,14 @@ function ShoppingList({ cart, updateCart }) {
 	)
 
 function addToCart(name, price) {
-	const currentPlantAdded = cart.find((plant) => plant.name === name)
-	if (currentPlantAdded) {
-		const cartFilteredCurrentPlant = cart.filter(
-			(plant) => plant.name !== name
+	const currentPaintAdded = cart.find((paint) => paint.name === name)
+	if (currentPaintAdded) {
+		const cartFilteredCurrentPaint = cart.filter(
+			(paint) => paint.name !== name
 		)
 		updateCart([
-			...cartFilteredCurrentPlant,
-			{ name, price, amount: currentPlantAdded.amount + 1 }
+			...cartFilteredCurrentPaint,
+			{ name, price, amount: currentPaintAdded.amount + 1 }
 		])
 	} else {
 		updateCart([...cart, { name, price, amount: 1 }])
@@ -28,18 +28,18 @@ function addToCart(name, price) {
 }
 
 return (
-	<div className='lmj-shopping-list'>
+	<div className='lmp-shopping-list'>
 		<Categories
 			categories={categories}
 			setActiveCategory={setActiveCategory}
 			activeCategory={activeCategory}
 		/>
 
-		<ul className='lmj-plant-list'>
+		<ul className='lmp-paint-list'>
 			{paintList.map(({ id, cover, name, support, couleur, contenance, marque, price }) =>
 				!activeCategory || activeCategory === support ? (
 					<div key={id}>
-						<PlantItem
+						<PaintItem
 							cover={cover}
 							name={name}
 							support={support}
