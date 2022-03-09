@@ -35,9 +35,10 @@ code {
   height: 40px;
   left: 65%;
   top: 10px;
-  background:#2bc6ff;
+  background:rgba(255, 70, 70, 1);
   border-radius: 24px;
   cursor: pointer;
+  padding: 0px 10px;
 }
 
 .SignUpicon {
@@ -52,9 +53,10 @@ code {
   height: 40px;
   left: 85%;
   top: 10px;
-  background:#2bc6ff;
+  background:rgba(255, 70, 70, 1);
   border-radius: 24px;
   cursor: pointer;
+  padding: 0px 10px;
 }
 
 .loginicon:hover{
